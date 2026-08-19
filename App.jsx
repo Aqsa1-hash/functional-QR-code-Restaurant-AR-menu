@@ -9,7 +9,6 @@ function App() {
   const [feedbackText, setFeedbackText] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  // Saari 11 files ke sath mukammal menu list
   const menuItems = [
     {
       id: 1,
