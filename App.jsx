@@ -9,12 +9,15 @@ function App() {
   const [feedbackText, setFeedbackText] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
+  // Live URL ya current window ka link fetch karne ke liye
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+
   const menuItems = [
     {
       id: 1,
       name: 'Delicious Pizza',
       price: 12.99,
-      modelPath: '/models/3d_pizza.glb',
+      modelPath: '/models/Pizza.glb',
     },
     {
       id: 2,
@@ -84,7 +87,7 @@ function App() {
     alert(`${item.name} added to cart!`);
   };
 
-  // Submit feedback to backend with your IP address
+  // Submit feedback to backend
   const handleFeedbackSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -108,10 +111,10 @@ function App() {
         <h1>🍽️ AR Restaurant Menu</h1>
         <p>Scan the QR code to open on mobile, view food in AR, and order directly!</p>
 
-        {/* QR Code Section with Updated IP Address */}
+        {/* QR Code Section - Ab yeh live URL ko point karega */}
         <div className="qr-container">
           <div className="qr-box">
-            <QRCodeSVG value="http://192.168.1.82:5173" size={110} />
+            <QRCodeSVG value={currentUrl} size={110} />
             <p>Scan to test on mobile</p>
           </div>
         </div>
