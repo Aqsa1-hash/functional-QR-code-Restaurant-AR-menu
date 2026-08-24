@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '@google/model-viewer';
 import { QRCodeSVG } from 'qrcode.react';
 import './App.css';
 
@@ -9,7 +8,6 @@ function App() {
   const [feedbackText, setFeedbackText] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  // Live URL ya current window ka link fetch karne ke liye
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
 
   const menuItems = [

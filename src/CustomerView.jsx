@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '@google/model-viewer';
 import { QRCodeSVG } from 'qrcode.react';
 
 function CustomerView() {
